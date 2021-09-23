@@ -1,7 +1,8 @@
-package com.ejercicios.formulariologin
+package com.ejercicios.formulariologin.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ejercicios.formulariologin.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
