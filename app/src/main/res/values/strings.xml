@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Formulario&amp;Login</string>
+    <string name="titulo_login">Login</string>
+    <string name="titulo_registro">Registro</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Email</string>
+    <string name="login">Ingresar</string>
+    <string name="registro">Registrarme</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="userName">Nombre de usuario</string>
 </resources>
