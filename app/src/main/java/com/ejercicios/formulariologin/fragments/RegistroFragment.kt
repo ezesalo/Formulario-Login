@@ -66,7 +66,7 @@ class RegistroFragment : Fragment() {
                        val action =  RegistroFragmentDirections.actionRegistroFragmentToHomeFragment()
                             v.findNavController().navigate(action)
                         }else{
-                            Snackbar.make(v, "Error en el registro. Por favor intentelo de nuevo", Snackbar.LENGTH_LONG).show()
+                            Snackbar.make(v, "Error en el Registro. Por favor verifique sus datos", Snackbar.LENGTH_LONG).show()
                         }
                     }
 

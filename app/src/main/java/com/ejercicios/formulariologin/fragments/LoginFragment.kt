@@ -57,7 +57,7 @@ class LoginFragment : Fragment() {
                             val action =  LoginFragmentDirections.actionLoginFragmentToHomeFragment()
                             v.findNavController().navigate(action)
                         }else{
-                            Snackbar.make(v, "Error en Logn. Por favor intentelo de nuevo", Snackbar.LENGTH_LONG).show()
+                            Snackbar.make(v, "Error en el ingreso, Datos incorrectos", Snackbar.LENGTH_LONG).show()
                         }
                     }
 
