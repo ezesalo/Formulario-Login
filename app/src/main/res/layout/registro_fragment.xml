@@ -47,6 +47,7 @@
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="@string/nombre"
+
         android:inputType="textPersonName|text"
         android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@+id/apellidoRegistroTxt"
@@ -83,7 +84,6 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/ic_field"
         android:drawableStart="@drawable/ic_user_action_name"
-
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="@string/userName"
@@ -103,7 +103,6 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/ic_field"
         android:drawableStart="@drawable/ic_email"
-        android:drawableLeft="@drawable/ic_email"
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="@string/email"
@@ -128,7 +127,7 @@
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/RegistroButtom"
+        app:layout_constraintBottom_toTopOf="@+id/RegistroButton"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -136,13 +135,13 @@
         app:layout_constraintTop_toBottomOf="@+id/emailRegistroTxt" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/RegistroButtom"
+        android:id="@+id/RegistroButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/ic_buttom"
+        android:background="@drawable/ic_button"
         android:hint="@string/registro"
         android:text="@string/registro"
         android:textColor="@color/white"

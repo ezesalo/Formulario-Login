@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "982786079677",
+    "project_id": "formulario-y-login-tp3",
+    "storage_bucket": "formulario-y-login-tp3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982786079677:android:e6922ee6524f0a6d63b0d4",
+        "android_client_info": {
+          "package_name": "com.company.formularioyregistro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982786079677-220hemrmk45msr8g09podre20r9olf18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOIw08zmocVhTf1HfMxzYlzaxjh4ZpbH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982786079677-220hemrmk45msr8g09podre20r9olf18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
