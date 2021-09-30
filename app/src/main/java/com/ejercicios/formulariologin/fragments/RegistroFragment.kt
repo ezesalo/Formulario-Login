@@ -66,7 +66,7 @@ class RegistroFragment : Fragment() {
                        val action =  RegistroFragmentDirections.actionRegistroFragmentToHomeFragment()
                             v.findNavController().navigate(action)
                         }else{
-                            Snackbar.make(v, "Error en el Registro. Por favor verifique sus datos", Snackbar.LENGTH_LONG).show()
+                            showAlert()
                         }
                     }
 
@@ -74,13 +74,13 @@ class RegistroFragment : Fragment() {
         }
     }
 
-//    private fun showAlert(){
-//        val builder = AlertDialog.Builder(context)
-//        builder.setTitle("Error")
-//        builder.setMessage("Se ha producido un error en el Registro")
-//        builder.setPositiveButton("Aceptar", null)
-//        val dialog: AlertDialog = builder.create()
-//        dialog.show()
-//    }
+    private fun showAlert(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Error")
+        builder.setMessage("Se ha producido un error en el Registro")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
 
 }

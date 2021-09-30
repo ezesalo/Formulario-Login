@@ -1,5 +1,6 @@
 package com.ejercicios.formulariologin.fragments
 
+import android.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -57,19 +58,24 @@ class LoginFragment : Fragment() {
                             val action =  LoginFragmentDirections.actionLoginFragmentToHomeFragment()
                             v.findNavController().navigate(action)
                         }else{
-                            Snackbar.make(v, "Error en el ingreso, Datos incorrectos", Snackbar.LENGTH_LONG).show()
+                           showAlert()
                         }
                     }
 
     }
 
 }
-    }}
-    //    private fun showAlert(){
-//        val builder = AlertDialog.Builder(context)
-//        builder.setTitle("Error")
-//        builder.setMessage("Se ha producido un error en el Login")
-//        builder.setPositiveButton("Aceptar", null)
-//        val dialog: AlertDialog = builder.create()
-//        dialog.show()
-//    }
+    }
+
+    private fun showAlert(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Error")
+        builder.setMessage("Se ha producido un error en el Login")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+
+}
+
