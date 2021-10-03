@@ -30,7 +30,7 @@ class RegistroFragment : Fragment() {
         fun newInstance() = RegistroFragment()
     }
 
-    private lateinit var viewModel: RegistroViewModel
+    private lateinit var viewModelRegistro: RegistroViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,18 +49,22 @@ class RegistroFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(RegistroViewModel::class.java)
+        viewModelRegistro = ViewModelProvider(this).get(RegistroViewModel::class.java)
         // TODO: Use the ViewModel
     }
+
 
     override fun onStart() {
         super.onStart()
 
+        val nombre = nombreRegistro.text.toString()
+        val apellido = apellidoRegistro.text.toString()
+        val email =  emailRegistro.text.toString()
+        val password = passwordRegistro.text.toString()
         registroButton.setOnClickListener(){
-            if (nombreRegistro.text.isNotEmpty() && apellidoRegistro.text.isNotEmpty() && userNameRegistro.text.isNotEmpty() &&
-                emailRegistro.text.isNotEmpty() && passwordRegistro.text.isNotEmpty()){
+            if ( viewModelRegistro.checkEmpty(nombre, apellido, email, password)){
 
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailRegistro.text.toString(), passwordRegistro.text.toString())
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener{
                         if(it.isSuccessful){
                        val action =  RegistroFragmentDirections.actionRegistroFragmentToHomeFragment()

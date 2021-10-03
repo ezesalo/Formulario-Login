@@ -26,7 +26,7 @@ class LoginFragment : Fragment() {
         fun newInstance() = LoginFragment()
     }
 
-    private lateinit var viewModel: LoginViewModel
+    private lateinit var viewModelLogin: LoginViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,17 +42,21 @@ class LoginFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        viewModelLogin = ViewModelProvider(this).get(LoginViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
     override fun onStart() {
         super.onStart()
+        val email = emailLogin.text.toString()
+        val password = passwordLogin.text.toString()
 
         loginButton.setOnClickListener(){
-            if(emailLogin.text.isNotEmpty() && passwordLogin.text.isNotEmpty()){
+            if(viewModelLogin.checkEmpty(email, password)){
 
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(emailLogin.text.toString(), passwordLogin.text.toString())
+
+                //ver con el profesor como hacerlo en la View
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(){
                         if(it.isSuccessful){
                             val action =  LoginFragmentDirections.actionLoginFragmentToHomeFragment()
@@ -62,15 +66,15 @@ class LoginFragment : Fragment() {
                         }
                     }
 
-    }
+            }
 
-}
+        }
     }
 
     private fun showAlert(){
-        val builder = AlertDialog.Builder(requireContext())
+            val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("Error")
-        builder.setMessage("Se ha producido un error en el Login")
+        builder.setMessage("Se ha producido un error en el Login. Si aun no se ha registrado, por favor hágalo")
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
