@@ -12,16 +12,14 @@ import android.widget.EditText
 import androidx.navigation.findNavController
 import com.ejercicios.formulariologin.R
 import com.ejercicios.formulariologin.Views.RegistroViewModel
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
 
 class RegistroFragment : Fragment() {
 
     lateinit var v: View
     lateinit var nombreRegistro: EditText
     lateinit var apellidoRegistro: EditText
-    lateinit var userNameRegistro: EditText
+    lateinit var telefonoRegistro: EditText
     lateinit var emailRegistro: EditText
     lateinit var passwordRegistro: EditText
     lateinit var registroButton: Button
@@ -39,7 +37,7 @@ class RegistroFragment : Fragment() {
         v = inflater.inflate(R.layout.registro_fragment, container, false)
         nombreRegistro = v.findViewById(R.id.nombreRegistroTxt)
         apellidoRegistro = v.findViewById(R.id.apellidoRegistroTxt)
-        userNameRegistro = v.findViewById(R.id.userNameRegistroTxt)
+        telefonoRegistro = v.findViewById(R.id.telefonoRegistroTxt)
         emailRegistro = v.findViewById(R.id.emailRegistroTxt)
         passwordRegistro = v.findViewById(R.id.passwordRegistroTxt)
         registroButton = v.findViewById(R.id.RegistroButton)
@@ -59,26 +57,35 @@ class RegistroFragment : Fragment() {
 
         val nombre = nombreRegistro.text.toString()
         val apellido = apellidoRegistro.text.toString()
+        val telefono = telefonoRegistro.text.toString()
         val email =  emailRegistro.text.toString()
         val password = passwordRegistro.text.toString()
+
         registroButton.setOnClickListener(){
-            if ( viewModelRegistro.checkEmpty(nombre, apellido, email, password)){
+            if ( viewModelRegistro.camposCompletos(nombre, apellido, telefono, email, password)){
 
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener{
-                        if(it.isSuccessful){
-                       val action =  RegistroFragmentDirections.actionRegistroFragmentToHomeFragment()
-                            v.findNavController().navigate(action)
-                        }else{
-                            showAlert()
-                        }
-                    }
-
-        }
+                if (viewModelRegistro.registrar(nombre, apellido, email, password)){
+                    val action =  RegistroFragmentDirections.actionRegistroFragmentToHomeFragment()
+                    v.findNavController().navigate(action)
+                }else{
+                    showAlert()
+                }
+            }else{
+             showAlertEmpty()
+            }
         }
     }
 
     private fun showAlert(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Error")
+        builder.setMessage("Se ha producido un error en el Registro")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    private fun showAlertEmpty(){
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("Error")
         builder.setMessage("Se ha producido un error en el Registro")

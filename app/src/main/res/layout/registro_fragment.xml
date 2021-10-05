@@ -70,13 +70,13 @@
         android:hint="@string/apellido"
         android:inputType="textPersonName|text"
         android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/userNameRegistroTxt"
+        app:layout_constraintBottom_toTopOf="@+id/telefonoRegistroTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombreRegistroTxt" />
 
     <EditText
-        android:id="@+id/userNameRegistroTxt"
+        android:id="@+id/telefonoRegistroTxt"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
@@ -87,7 +87,7 @@
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="@string/userName"
-        android:inputType="textPersonName|text"
+        android:inputType="phone"
         android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@+id/emailRegistroTxt"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +112,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userNameRegistroTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/telefonoRegistroTxt" />
 
     <EditText
         android:id="@+id/passwordRegistroTxt"

@@ -14,14 +14,24 @@ import com.google.firebase.ktx.Firebase
 
 class LoginViewModel : ViewModel() {
 
+    //usar db para agregar usuario o se agrega automaticamente?
     val db = Firebase.firestore
 
-//    Ver con el profe si esto puede servir para no tener que hacerlo en el fragment
-//    private lateinit var auth: FirebaseAuth
-//    auth = Firebase.auth
-//    auth.signInWithEmailAndPassword()
+    private var auth: FirebaseAuth = FirebaseAuth.getInstance()
 
-    fun checkEmpty (email: String, password: String): Boolean {
+    fun ingresar (email: String, password: String): Boolean {
+        var loginSatisfactorio = false
+
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(){
+                if (it.isSuccessful){
+                    loginSatisfactorio = true
+                }
+            }
+        return loginSatisfactorio
+    }
+
+    fun camposCompletos (email: String, password: String): Boolean {
        var loginCompleto = false
 
         if (email.isNotEmpty() && password.isNotEmpty()){

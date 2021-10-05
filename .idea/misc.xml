@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable/button_drawle.xml" value="0.2796875" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable/ic_back.xml" value="0.2140625" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable/ic_bg.xml" value="0.2796875" />
@@ -10,11 +11,13 @@
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable/ic_button.xml" value="0.2734375" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable/ic_email.xml" value="0.2796875" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable/ic_field.xml" value="0.22135416666666666" />
+        <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable/ic_lock.xml" value="0.22135416666666666" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable/ic_logo.xml" value="0.22135416666666666" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable/ic_sign_out.xml" value="0.22135416666666666" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable/ic_u2.xml" value="0.22135416666666666" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/drawable/ic_user.xml" value="0.2796875" />
+        <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/layout/account_recovery_fragment.xml" value="0.315625" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/layout/activity_auth.xml" value="0.264" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Formulario&amp;Login/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
