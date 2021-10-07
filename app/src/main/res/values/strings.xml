@@ -8,7 +8,7 @@
     <string name="registro">Registrarme</string>
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
-    <string name="userName">Nombre de usuario</string>
+    <string name="telefono">Teléfono</string>
     <string name="recovery_password">Olvide mi contraseña</string>
     <string name="primer_text_registro">¿Aún no estas registrado? Hace click</string>
     <string name="segundo_text_registro">Aqui</string>

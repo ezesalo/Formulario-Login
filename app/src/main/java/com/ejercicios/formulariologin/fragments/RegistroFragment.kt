@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.ejercicios.formulariologin.R
 import com.ejercicios.formulariologin.Views.RegistroViewModel
@@ -23,12 +24,12 @@ class RegistroFragment : Fragment() {
     lateinit var emailRegistro: EditText
     lateinit var passwordRegistro: EditText
     lateinit var registroButton: Button
+    private val  viewModelRegistro: RegistroViewModel by viewModels()
 
     companion object {
         fun newInstance() = RegistroFragment()
     }
 
-    private lateinit var viewModelRegistro: RegistroViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,7 +48,8 @@ class RegistroFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModelRegistro = ViewModelProvider(this).get(RegistroViewModel::class.java)
+        //Cambiar forma de instanciar al view model
+       // viewModelRegistro = ViewModelProvider(this).get(RegistroViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

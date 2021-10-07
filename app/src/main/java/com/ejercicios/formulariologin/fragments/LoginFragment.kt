@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.core.content.ContentProviderCompat
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.ejercicios.formulariologin.R
 import com.ejercicios.formulariologin.Views.LoginViewModel
@@ -23,12 +24,11 @@ class LoginFragment : Fragment() {
         lateinit var emailLogin: EditText
         lateinit var passwordLogin: EditText
         lateinit var loginButton: Button
+        private val viewModelLogin: LoginViewModel by viewModels()
 
         companion object {
             fun newInstance() = LoginFragment()
         }
-
-        private lateinit var viewModelLogin: LoginViewModel
 
         override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -44,7 +44,8 @@ class LoginFragment : Fragment() {
 
         override fun onActivityCreated(savedInstanceState: Bundle?) {
             super.onActivityCreated(savedInstanceState)
-            viewModelLogin = ViewModelProvider(this).get(LoginViewModel::class.java)
+          //  Cambiar a nueva forma la instacia de viewModel
+          //  viewModelLogin = ViewModelProvider(this).get(LoginViewModel::class.java)
             // TODO: Use the ViewModel
         }
 
