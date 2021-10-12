@@ -9,14 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import androidx.core.content.ContentProviderCompat
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
 import com.ejercicios.formulariologin.R
 import com.ejercicios.formulariologin.Views.LoginViewModel
-import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.auth.FirebaseAuth
 
 class LoginFragment : Fragment() {
 
@@ -24,7 +18,8 @@ class LoginFragment : Fragment() {
         lateinit var emailLogin: EditText
         lateinit var passwordLogin: EditText
         lateinit var loginButton: Button
-        private val viewModelLogin: LoginViewModel by viewModels()
+        // private val viewModelLogin: LoginViewModel by viewModels()
+        private lateinit var viewModelLogin: LoginViewModel
 
         companion object {
             fun newInstance() = LoginFragment()
@@ -36,7 +31,7 @@ class LoginFragment : Fragment() {
         ): View? {
             v = inflater.inflate(R.layout.login_fragment, container, false)
             emailLogin = v.findViewById(R.id.emailLoginTxt)
-            passwordLogin = v.findViewById(R.id.passwordLognTxt)
+            passwordLogin = v.findViewById(R.id.passwordLoginTxt)
             loginButton = v.findViewById(R.id.loginButton)
 
             return v
@@ -45,8 +40,8 @@ class LoginFragment : Fragment() {
         override fun onActivityCreated(savedInstanceState: Bundle?) {
             super.onActivityCreated(savedInstanceState)
           //  Cambiar a nueva forma la instacia de viewModel
-          //  viewModelLogin = ViewModelProvider(this).get(LoginViewModel::class.java)
-            // TODO: Use the ViewModel
+            viewModelLogin = ViewModelProvider(this).get(LoginViewModel::class.java)
+
         }
 
         override fun onStart() {
@@ -58,8 +53,8 @@ class LoginFragment : Fragment() {
                 if(viewModelLogin.camposCompletos(email, password)){
 
                     if (viewModelLogin.ingresar(email, password)){
-                        val action =  LoginFragmentDirections.actionLoginFragmentToHomeFragment()
-                        v.findNavController().navigate(action)
+                      //  val action =  LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+                      //  v.findNavController().navigate(action)
                     }else{
                                showAlert()
                             }

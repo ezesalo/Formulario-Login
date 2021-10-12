@@ -44,13 +44,13 @@ class Before2Fragment : Fragment() {
         super.onStart()
 
         registroBtn.setOnClickListener(){
-            val act1= Before2FragmentDirections.actionBefore2FragmentToRegistroFragment()
-            v.findNavController().navigate(act1)
+          //  val act1= Before2FragmentDirections.actionBefore2FragmentToRegistroFragment()
+          //  v.findNavController().navigate(act1)
         }
 
         loginBtn.setOnClickListener(){
-            val act2 = Before2FragmentDirections.actionBefore2FragmentToLoginFragment()
-            v.findNavController().navigate(act2)
+          //  val act2 = Before2FragmentDirections.actionBefore2FragmentToLoginFragment()
+        // v.findNavController().navigate(act2)
         }
     }
 }
